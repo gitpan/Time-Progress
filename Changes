@@ -1,0 +1,6 @@
+Revision history for Perl extension Time::Progress.
+
+0.01  Sun Oct 21 17:00:49 2001
+	- original version; created by h2xs 1.21 with options
+		-X Time::Progress
+
