@@ -2,7 +2,7 @@ package Time::Progress;
 use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw(  );
-our $VERSION = '1.0';
+our $VERSION = '1.1';
 use strict;
 use warnings;
 use Carp;
@@ -78,13 +78,13 @@ sub report
   my $max = $self->{ 'max' };
   $cur = $min unless defined $cur;
 
-  my $b;
+  my $b  = 'n/a';
   my $bl = 79;
 
   if ( $format =~ /%(\d*)[bB]/ )
     {
     $bl = $1;
-    $bl = 79 if $bl < 1;
+    $bl = 79 if $bl eq '' or $bl < 1;
     }
 
   my $e = "n/a";
@@ -92,8 +92,7 @@ sub report
   my $f = "n/a";
   my $p = "n/a";
 
-  if ( $l > 0 and
-       (($min <= $cur and $cur <= $max) or ($min >= $cur and $cur >= $max)) )
+  if ( (($min <= $cur and $cur <= $max) or ($min >= $cur and $cur >= $max)) )
     {
     if ( $cur - $min == 0 )
       {
@@ -148,7 +147,7 @@ sub estimate_str
 
 =head1 NAME
 
-Time::Progress -- Elapsed and estimated finish time reporting.
+Time::Progress - Elapsed and estimated finish time reporting.
 
 =head1 SYNOPSIS
 
@@ -275,11 +274,11 @@ elapsed seconds
 
 elapsed time in minutes in format MM:SS
 
-=item %l
+=item %e
 
 remaining seconds
 
-=item %L
+=item %E
 
 remaining time in minutes in format MM:SS
 
@@ -343,7 +342,7 @@ helpers -- return elapsed/estimated seconds or string in format:
  
   print $p->report( "done %p elapsed: %L (%l sec), ETA %E (%e sec)\n", $c );
   # prints:
-  # done  40.0% elapsed time   0:05 (5 sec), ETA   0:07 (7 sec)
+  # done  33.3% elapsed time   0:05 (5 sec), ETA   0:07 (7 sec)
  
   print $p->report( "%45b %p\r", $c );
   # prints:
@@ -351,7 +350,7 @@ helpers -- return elapsed/estimated seconds or string in format:
  
   print $p->report( "done %p ETA %f\n", $c );
   # prints:
-  # done  44.4% ETA Sun Oct 21 16:50:57 2001
+  # done  33.3% ETA Sun Oct 21 16:50:57 2001
 
 =head1 AUTHOR
 
@@ -361,5 +360,8 @@ helpers -- return elapsed/estimated seconds or string in format:
 
   http://www.biscom.net/~cade
  
+=head1 VERSION
+
+  $Id: Progress.pm,v 1.1.1.1 2001/11/11 02:06:50 cade Exp $
  
 =cut
