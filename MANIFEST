@@ -5,3 +5,4 @@ Progress.pm
 README
 test.pl
 COPYING
+META.yml                                 Module meta-data (added by MakeMaker)

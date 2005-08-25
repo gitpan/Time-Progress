@@ -2,7 +2,7 @@ package Time::Progress;
 use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw(  );
-our $VERSION = '1.1';
+our $VERSION = '1.2';
 use strict;
 use warnings;
 use Carp;
@@ -139,7 +139,7 @@ sub estimate
 { my $self = shift; return $self->report("%e"); }
 
 sub estimate_str
-{ my $self = shift; return $self->report("remaining time is %L min.\n"); }
+{ my $self = shift; return $self->report("remaining time is %E min.\n"); }
 
 1;
 
@@ -151,6 +151,8 @@ Time::Progress - Elapsed and estimated finish time reporting.
 
 =head1 SYNOPSIS
 
+  # autoflush to get \r working
+  $| = 1;
   # get new `timer'
   my $p = new Time::Progress;
  
@@ -163,18 +165,18 @@ Time::Progress - Elapsed and estimated finish time reporting.
   $p->attr( min => -2, max => -20 );
   # restart `timer'
   $p->restart;
-  for my $c ( -2 .. -20 )
+  my $c;
+  for( $c = -2; $c >= -20; $c-- )
     {
     # print progress bar and percentage done
-    print $p->report( "%70b %p\r", $c );
-    sleep 1; # or work...
+    print $p->report( "eta: %E min, %40b %p\r", $c );
+    sleep 1; # work...
     }
   # stop timer
   $p->stop;
  
   # report times
   print $p->elapsed_str;
-  print $p->estimate_str;
 
 =head1 DESCRIPTION
 
@@ -362,6 +364,6 @@ helpers -- return elapsed/estimated seconds or string in format:
  
 =head1 VERSION
 
-  $Id: Progress.pm,v 1.1.1.1 2001/11/11 02:06:50 cade Exp $
+  $Id: Progress.pm,v 1.2 2002/12/16 08:29:22 cade Exp $
  
 =cut

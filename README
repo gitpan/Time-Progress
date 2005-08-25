@@ -1,5 +1,7 @@
-Time/Progress version 1.0
+Time/Progress version 1.2
 =========================
+
+Time::Progress - Elapsed and estimated finish time reporting.
 
 INSTALLATION
 
@@ -14,5 +16,5 @@ COPYRIGHT AND LICENCE
 
 See `COPYING' file for full GPL license text.
 
-Copyright (C) 2001 Vladi Belperchinov-Shabanski
+Copyright (C) 2001-2005 Vladi Belperchinov-Shabanski
 
