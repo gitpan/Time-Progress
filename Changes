@@ -1,5 +1,10 @@
 Revision history for Perl extension Time::Progress.
 
+1.3   Thu Nov 29 2007
+
+  - examples use positive numbers (note by  Johan Lindstrom)
+  - reset() may be used as attr()
+
 1.2   Fri Aug 26 2005
 
   - estimate_str() fixed
@@ -7,5 +12,5 @@ Revision history for Perl extension Time::Progress.
 
 0.01  Sun Oct 21 2001
 	- original version; created by h2xs 1.21 with options
-		-X Time::Progress
+	- -X Time::Progress
 
