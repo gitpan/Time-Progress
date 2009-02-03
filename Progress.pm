@@ -2,7 +2,7 @@ package Time::Progress;
 use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw(  );
-our $VERSION = '1.3';
+our $VERSION = '1.4';
 use strict;
 use warnings;
 use Carp;
@@ -376,9 +376,5 @@ helpers -- return elapsed/estimated seconds or string in format:
   <cade@biscom.net> <cade@datamax.bg> <cade@cpan.org>
 
   http://cade.datamax.bg
-
-=head1 VERSION
-
-  $Id: Progress.pm,v 1.3 2005/08/25 21:24:39 cade Exp $
 
 =cut
