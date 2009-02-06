@@ -2,7 +2,7 @@ package Time::Progress;
 use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw(  );
-our $VERSION = '1.4';
+our $VERSION = '1.5';
 use strict;
 use warnings;
 use Carp;
@@ -120,15 +120,26 @@ sub report
       }
     }
 
-  $format =~ s/%l/$l/g;
-  $format =~ s/%L/$L/g;
-  $format =~ s/%e/$e/g;
-  $format =~ s/%E/$E/g;
+  $format =~ s/%(\d*)l/$self->sp_format( $l, $1 )/ge;
+  $format =~ s/%(\d*)L/$self->sp_format( $L, $1 )/ge;
+  $format =~ s/%(\d*)e/$self->sp_format( $e, $1 )/ge;
+  $format =~ s/%(\d*)E/$self->sp_format( $E, $1 )/ge;
   $format =~ s/%p/$p/g;
   $format =~ s/%f/$f/g;
   $format =~ s/%\d*[bB]/$b/g;
 
   return $format;
+}
+
+sub sp_format
+{
+  my $self = shift;
+
+  my $val  = shift;
+  my $len  = shift;
+
+  return $val unless $len ne '' and $len > 0;
+  return sprintf( "%${len}s", $val );
 }
 
 sub elapsed
@@ -325,6 +336,12 @@ progress bar which looks like:
 
 Parameters can be ommited and then default format set with B<attr> will
 be used.
+
+Sequences 'L', 'l', 'E' and 'e' can have width also:
+
+  %10e
+  %5l
+  ...
 
 Estimate time calculations can be used only if min and max values are set
 (see B<attr> method) and current item is passed to B<report>! if you want

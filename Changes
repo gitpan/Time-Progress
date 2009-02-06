@@ -1,5 +1,9 @@
 Revision history for Perl extension Time::Progress.
 
+1.5   Wed Feb  6 2009
+
+  - %LlEe formats can take optional width (%10e for example)
+
 1.4   Wed Feb  4 2009
 
   - relicensed under same terms as Perl (i.e. incl. Artistic)
