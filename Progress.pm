@@ -2,7 +2,7 @@ package Time::Progress;
 use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw(  );
-our $VERSION = '1.5';
+our $VERSION = '1.6';
 use strict;
 use warnings;
 use Carp;
@@ -143,16 +143,16 @@ sub sp_format
 }
 
 sub elapsed
-{ my $self = shift; return $self->report("%l"); }
+{ my $self = shift; return $self->report("%l",@_); }
 
 sub elapsed_str
-{ my $self = shift; return $self->report("elapsed time is %L min.\n"); }
+{ my $self = shift; return $self->report("elapsed time is %L min.\n",@_); }
 
 sub estimate
-{ my $self = shift; return $self->report("%e"); }
+{ my $self = shift; return $self->report("%e",@_); }
 
 sub estimate_str
-{ my $self = shift; return $self->report("remaining time is %E min.\n"); }
+{ my $self = shift; return $self->report("remaining time is %E min.\n",@_); }
 
 1;
 
@@ -283,7 +283,7 @@ of parameters.
 
 =item report
 
-B<report> is the most complex method in this package! :)
+B<report> is the most complex method in this package. :)
 
 expected arguments are:
 
@@ -356,16 +356,20 @@ You can freely mix reports during the same event.
 
 =item elapsed
 
-=item estimated
+=item estimate
+
+helpers -- return elapsed/estimate seconds.
 
 =item elapsed_str
 
-=item estimated_str
+=item estimate_str
 
-helpers -- return elapsed/estimated seconds or string in format:
+helpers -- return elapsed/estimated string in format:
 
   "elapsed time is MM:SS min.\n"
   "remaining time is MM:SS min.\n"
+
+all helpers need one argument--current item.
 
 =back
 

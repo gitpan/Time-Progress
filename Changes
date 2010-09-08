@@ -1,5 +1,9 @@
 Revision history for Perl extension Time::Progress.
 
+1.6   Wed Sep  8 2010
+
+  - fixed helpers (note by Andreas Koenig)
+
 1.5   Wed Feb  6 2009
 
   - %LlEe formats can take optional width (%10e for example)
