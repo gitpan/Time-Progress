@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Time-Progress
-version:            1.6
+version:            1.7
 abstract:           Elapsed and estimated finish time reporting.
 author:
     - Vladi Belperchinov-Shabanski <cade@biscom.net>

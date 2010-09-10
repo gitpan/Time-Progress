@@ -2,7 +2,7 @@ package Time::Progress;
 use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw(  );
-our $VERSION = '1.6';
+our $VERSION = '1.7';
 use strict;
 use warnings;
 use Carp;
@@ -225,7 +225,7 @@ already set to 0 when object is constructed by new():
 
 =item stop
 
-Sets the stop mark. this is only usefull if you do some work, then finish,
+Sets the stop mark. this is only useful if you do some work, then finish,
 then do some work that shouldn't be timed and finally report. Something
 like:
 
