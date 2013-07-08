@@ -2,7 +2,7 @@ package Time::Progress;
 use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw(  );
-our $VERSION = '1.7';
+our $VERSION = '1.8';
 use strict;
 use warnings;
 use Carp;
@@ -225,7 +225,7 @@ already set to 0 when object is constructed by new():
 
 =item stop
 
-Sets the stop mark. this is only useful if you do some work, then finish,
+Sets the stop mark. This is only useful if you do some work, then finish,
 then do some work that shouldn't be timed and finally report. Something
 like:
 
@@ -369,7 +369,7 @@ helpers -- return elapsed/estimated string in format:
   "elapsed time is MM:SS min.\n"
   "remaining time is MM:SS min.\n"
 
-all helpers need one argument--current item.
+all helpers need one argument -- current item.
 
 =back
 
@@ -390,6 +390,12 @@ all helpers need one argument--current item.
   # prints:
   # done  33.3% ETA Sun Oct 21 16:50:57 2001
 
+=head1 GITHUB REPOSITORY
+
+  git@github.com:cade-vs/perl-time-progress.git
+  
+  git clone git://github.com/cade-vs/perl-time-progress.git
+  
 =head1 AUTHOR
 
   Vladi Belperchinov-Shabanski "Cade"

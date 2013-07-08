@@ -1,8 +1,14 @@
 Revision history for Perl extension Time::Progress.
 
+1.8   Mon Jul  8 2013
+
+  - more spelling
+  - published to github
+  - fixed docs
+
 1.7   Fri Sep 10 2010
 
- - fixed spelling (note by Salvatore Bonaccorso)
+  - fixed spelling (note by Salvatore Bonaccorso)
 
 1.6   Wed Sep  8 2010
 
@@ -27,6 +33,7 @@ Revision history for Perl extension Time::Progress.
   - example in POD fixed
 
 0.01  Sun Oct 21 2001
-	- original version; created by h2xs 1.21 with options
-	- -X Time::Progress
+  
+  - original version; created by h2xs 1.21 with options
+  - -X Time::Progress
 

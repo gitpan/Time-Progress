@@ -1,7 +1,8 @@
 Changes
 Makefile.PL
 MANIFEST
-Progress.pm
+lib/Time/Progress.pm
 README
-test.pl
+t/test.t
 META.yml                                 Module meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)
